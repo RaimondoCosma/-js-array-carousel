@@ -32,6 +32,9 @@ for (let i = 0; i < carouselImg.length; i++) {
     // 4. Evento bottone per elemento successivo
     const next = document.querySelector(".next");
     next.addEventListener('click', function() {   
+        if ( active === carouselImg.length ) {
+            active = 0;
+        }
         imgContainer.querySelectorAll(".item")[active].classList.remove("active");
         active = active + 1;
         imgContainer.querySelectorAll(".item")[active].classList.add("active");
