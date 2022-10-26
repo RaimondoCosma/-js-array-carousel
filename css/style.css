@@ -1,0 +1,35 @@
+/* -------------------
+    RESET
+------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------
+    COMMON
+------------------- */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: flex;
+    align-items: center;
+    width: 56.25rem;
+    height: 100vh;
+    margin: auto;
+}
+.items {
+    width: 100%;
+}
+.item {
+    width: 100%;
+}
+.item img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+}
