@@ -10,7 +10,8 @@ const carouselImg = [
 
 // 2. Creo un ciclo for per inserire dinamicamente le immagini
 const imgContainer = document.querySelector('.items');
-for ( let i = 0; i < carouselImg.length - 1; i++ ) {
-    itemContent = `<div class="item"><img src="${carouselImg[i]}"></div>`;
-    imgContainer.innerHTML = itemContent;
-}
+for ( let i = 0; i < carouselImg.length; i++ ) {
+    let itemContent = `<div class="item"><img src="${carouselImg[i]}"></div>`;
+    imgContainer.append(itemContent);
+};
+
