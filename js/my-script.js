@@ -12,6 +12,6 @@ const carouselImg = [
 const imgContainer = document.querySelector('.items');
 for ( let i = 0; i < carouselImg.length; i++ ) {
     let itemContent = `<div class="item"><img src="${carouselImg[i]}"></div>`;
-    imgContainer.append(itemContent);
+    imgContainer.insertAdjacentHTML('beforeend', itemContent);
 };
 
