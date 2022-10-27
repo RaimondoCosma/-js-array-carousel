@@ -1,4 +1,5 @@
 'use strict';
+
 // 1. Creo la lista contenente le immagini
 const carouselImg = [
     'img/01.jpg',
@@ -26,22 +27,19 @@ for (let i = 0; i < carouselImg.length; i++) {
     img.setAttribute("src", carouselImg[i]);
     item.append(img);
     imgContainer.append(item);
+
     // 3. Aggiungiamo gli eventi sul bottone:
     //  Mi conservo una variabile con valore di active = 0;
     let active = 0;
+
     // 4. Evento bottone per elemento successivo
     const next = document.querySelector(".next");
     next.addEventListener('click', function() {   
-        // if (active >= carouselImg.length - 1) {
-        //     imgContainer.querySelectorAll(".item")[active].classList.remove("active");
-        //     active -= carouselImg.length - 1;
-        //     imgContainer.querySelectorAll(".item")[active].classList.add("active");
-        // }
         imgContainer.querySelectorAll(".item")[active].classList.remove("active");
         if ( active === carouselImg.length -1 ) {
             active = 0;
         } else {
-            active += 1;
+            active += 1; // potevo scrivere active++
         }
         imgContainer.querySelectorAll(".item")[active].classList.add("active");
     })
@@ -53,7 +51,7 @@ for (let i = 0; i < carouselImg.length; i++) {
         if (active === 0) {
             active = carouselImg.length - 1;
         } else {
-            active -= 1;
+            active -= 1; // potevo scrivere active--
         }
         imgContainer.querySelectorAll(".item")[active].classList.add("active");
     })
