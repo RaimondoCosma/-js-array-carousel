@@ -14,13 +14,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('../img/journey-3.jpg');
+    background-size: cover;
 }
 .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 56.25rem;
     height: 100vh;
     margin: auto;
+}
+h1 {
+    font-size: 3.75rem;
 }
 img {
     display: block;
@@ -28,8 +35,12 @@ img {
 .items {
     position: relative;
     overflow-y: hidden;
-    width: 100%;
-    height: 25rem;
+    margin-top: 1.875rem;
+    width: 43.75rem;
+    height: 18.75rem;
+    border-width: 20px;
+    border-style: solid;
+    border-image: linear-gradient(to left top, #fff521, #cbc017, #998e0e, #696007, #3c3500) 1;
 }
 .prev, .next {
     position: absolute;
@@ -46,6 +57,12 @@ img {
     cursor: pointer;
     z-index: 100;
 }
+.prev:active, .next:active {
+    width: 1.75rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    font-size: 1.125rem;
+}
 .next {
     bottom: 0;
 }
@@ -54,7 +71,7 @@ img {
     height: 100%;
     position: absolute;
     opacity: 0;
-    transition: opacity 0.6s ease-out;
+    transition: opacity 0.4s ease-out;
 }
 .item img {
     width: 100%;
@@ -64,5 +81,5 @@ img {
 .active {
     position: absolute;
     opacity: 1;
-    transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
 }
