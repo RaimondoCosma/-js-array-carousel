@@ -32,26 +32,29 @@ for (let i = 0; i < carouselImg.length; i++) {
     // 4. Evento bottone per elemento successivo
     const next = document.querySelector(".next");
     next.addEventListener('click', function() {   
-        if (active >= carouselImg.length - 1) {
-            imgContainer.querySelectorAll(".item")[active].classList.remove("active");
-            active -= carouselImg.length - 1;
-            imgContainer.querySelectorAll(".item")[active].classList.add("active");
-        }
+        // if (active >= carouselImg.length - 1) {
+        //     imgContainer.querySelectorAll(".item")[active].classList.remove("active");
+        //     active -= carouselImg.length - 1;
+        //     imgContainer.querySelectorAll(".item")[active].classList.add("active");
+        // }
         imgContainer.querySelectorAll(".item")[active].classList.remove("active");
-        active += 1;
+        if ( active === carouselImg.length -1 ) {
+            active = 0;
+        } else {
+            active += 1;
+        }
         imgContainer.querySelectorAll(".item")[active].classList.add("active");
     })
 
     // 5. Evento bottone per elemento precedente
     const prev = document.querySelector(".prev");
     prev.addEventListener('click', function() {   
-        if (active <= 0) {
-            imgContainer.querySelectorAll(".item")[active].classList.remove("active");
-            active = carouselImg.length - 1;
-            imgContainer.querySelectorAll(".item")[active].classList.add("active");
-        }
         imgContainer.querySelectorAll(".item")[active].classList.remove("active");
-        active -= 1;
+        if (active === 0) {
+            active = carouselImg.length - 1;
+        } else {
+            active -= 1;
+        }
         imgContainer.querySelectorAll(".item")[active].classList.add("active");
     })
 }
